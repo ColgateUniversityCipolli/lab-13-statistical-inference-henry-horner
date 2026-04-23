@@ -137,7 +137,10 @@ print("The required sample size for a two-sided one sample t test is:")
 Click the link to go to the paper. Find the source data for Figure 2. Download the Excel file. Describe what you needed to do to collect the data for Figure 2(g). Note that you only need the `closer_vals` and `further_vals`. Ensure to `mutate()` the data to get a difference (e.g., `closer_vals - further_vals`).
 
 **Solution:**
-
+```{r}
+## MAKE EXCEL CSV IWTH ONLY THE CORRECT VALUES
+## READ.CSV
+```
 
 ## Part c
 Summarize the data.
