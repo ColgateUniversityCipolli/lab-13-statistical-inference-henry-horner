@@ -60,7 +60,10 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 #| include: false
 library(tidyverse)
 library(patchwork)
+library(pwr)
 ```
+
+
 
 # Remaining Portfolio Work!
 
@@ -114,8 +117,26 @@ That is, the unit of measure is the syllable as measured on six birds, and the m
 ## Part a
 Using the `pwr` package for \texttt{R} [@pwr], conduct a power analysis. How many observations would the researchers need to detect a moderate-to-large effect ($d=0.65$) when using $\alpha=0.05$ and default power (0.80) for a two-sided one sample $t$ test.
 
+**Solution:**
+```{r}
+d = 0.65
+a = 0.05
+default_power = 0.80
+
+n = pwr.t.test(d = d,
+              sig.level = a,
+              power = default_power,
+              type = "one.sample", 
+              alternative = "two.sided")
+print("The required sample size for a two-sided one sample t test is:")
+(n)
+```
+
 ## Part b
 Click the link to go to the paper. Find the source data for Figure 2. Download the Excel file. Describe what you needed to do to collect the data for Figure 2(g). Note that you only need the `closer_vals` and `further_vals`. Ensure to `mutate()` the data to get a difference (e.g., `closer_vals - further_vals`).
+
+**Solution:**
+
 
 ## Part c
 Summarize the data.
@@ -124,6 +145,11 @@ Summarize the data.
 * Summarize the closer data. Do the data suggest that dopamine in the brains of young zebra finches increases when they sing closer to their adult song?
 * Summarize the paired differences. Do the data suggest that there is a difference between dopamine in the brains of young zebra finches when they sing further away compared to closer to their adult song?
 * **Optional Challenge** Can you reproduce Figure 2(g)? Note that the you can use \texttt{geom\_errorbar()} to plot the range created by adding the mean $\pm$ one standard deviation.
+
+**Solution:**
+```{r}
+
+```
 
 ## Part d
 Conduct the inferences they do in the paper. Make sure to report the results a little more comprehensively -- that is your parenthetical should look something like: ($t=23.99$, $p<0.0001$; $g=1.34$; 95% CI: 4.43, 4.60). Ensure to verify any conditions for use.\
@@ -136,6 +162,11 @@ Conduct the inferences they do in the paper. Make sure to report the results a l
 * "The difference between populations was significant ($p=1.04 \times10^{-8}$).''\
 **Note**: Use the two-sided test.
 
+**Solution:**
+```{r}
+
+```
+
 ## Part e 
 
 For each hypothesis test in the previous question, plot the null $T$ 
@@ -144,4 +175,9 @@ to highlight the rejection region and the $p$-value. Additionally, add the
 resampling distribution for $T$ to the chart to demonstrate any differences 
 between the null distribution and the distribution suggested by the data.
 
+
+**Solution:**
+```{r}
+
+```
 
