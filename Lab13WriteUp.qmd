@@ -130,6 +130,7 @@ n = pwr.t.test(d = d,
               alternative = "two.sided")
 print("The required sample size for a two-sided one sample t test is:")
 (n)
+
 ```
 
 ## Part b
